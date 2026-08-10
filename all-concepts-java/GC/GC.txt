@@ -1,0 +1,23 @@
+Garbage Collections: is the automatic memory management system, that identifies and removes the objects
+which are not reachable by the program, freeing up the memory for the new objects
+
+Heap is divided into two generations such as
+
+Young Generation:
+    - Eden Region
+        - when new object created it comes in this regions, this is the segment more frequent minor gc's will trigger
+        - the objects which surviors the gc will get promoted to survivor space.
+    - S0 + S1 (always one empty) [survivor regions]
+
+Old Generation:
+    - long lived objects exits here
+    - this is where the major GC will happen (automatically controlled by JVM)
+
+Types of GC's:
+- Serial GC
+- Parallel GC
+- G1 GC
+- ZGC
+
+how to tune GC:
+java -Xms100m -Xmx100m -XX:+PrintGCDetails -XX:+PrintGCDateStamps .... <AppName>

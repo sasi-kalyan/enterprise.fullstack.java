@@ -15,13 +15,40 @@ public class StringExample {
 
         //String Methods
 
+        System.out.println("length of the string: "+ str.length());
+
         //charAt method
         char c = str.charAt(0);
+        char c2 = str.charAt(1);
         System.out.println("char at index 0: "+ c);
+        System.out.println("char at index 1: "+ c2);
 
         //substring
         String sub = obj.substring(0, 2);
         System.out.println("substring 0..2: "+ sub);
+
+        String p = "hello world";
+        String psub = p.substring(5);
+        System.out.println("substring 5 " + psub);
+
+        //equals method
+        String a = "hello";
+        String b = "hello";
+
+        System.out.println(a.equals(b));
+        System.out.println(a==b);
+
+        System.out.println("Java".compareTo("Python"));
+
+        //contains method
+        System.out.println(a.contains("hello"));
+
+        //toUpperCase, toLowercase
+        System.out.println(a.toUpperCase());
+
+        //replace
+        String m = a.replace("hello", "java");
+        System.out.println("replace : "+ m);
 
         //search methods
         System.out.println("Naruto in obj: "+ obj.indexOf("Naruto"));

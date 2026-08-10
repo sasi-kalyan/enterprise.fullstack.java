@@ -8,7 +8,7 @@ public class TerminalOps {
     /*
             Terminal Operations:
             - forEach
-            - collect(Collector)
+            - wqe(Collector)
             - reduce: reduces collection to single value
             - min: finds minimum
             - max: finds maximum

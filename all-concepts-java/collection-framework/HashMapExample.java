@@ -1,6 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class HashMapExample {
     public static void main(String[] args) {
@@ -35,6 +33,12 @@ public class HashMapExample {
         map.replace(1, "Attack On Titan");
 
         System.out.println("after replace: "+ map);
+
+        Set keys = map.keySet();
+        System.out.println("all keys: "+ keys);
+
+        Collection vals = map.values();
+        System.out.println("all values: "+ vals);
 
     }
 }

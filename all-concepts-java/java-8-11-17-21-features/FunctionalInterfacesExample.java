@@ -13,39 +13,61 @@
     Runnable () --> void
  */
 
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+/*
+    * Functional Interface: is an interface which does contain single ABSTRACT method, multiple default and static methods
+    *
+    * Predicate<T> - test
+    * Function<T, R> - apply
+    * Supplier<T> - get
+    * Consumer<T> - accept
+    * Comparator<T,T>
+    * Runnable<T> - run
+
+ */
 
 public class FunctionalInterfacesExample {
     public static void main(String[] args) {
 
         //Predicate usage and example
-        System.out.println("PREDICATE USAGE:");
+        System.out.println("Predicate<T> Example");
+        Predicate<Integer> iseven = (n) -> (n%2 == 0);
+        Predicate<Integer> isodd  = (n) -> (n%2 != 0);
 
-        Predicate<Integer> iseven = (n) -> n%2==0;
-        System.out.println("iseven? :"+ iseven.test(3));
+        System.out.println("2 is even & odd? " + iseven.and(isodd).test(2));
+        System.out.println("5 is odd? " + isodd.test(5));
+        System.out.println("8 is even? "+ iseven.test(8));
 
-        Predicate<Integer> ispostive = (n) -> (n > 0);
-        System.out.println("ispositive? "+ ispostive.test(-2));
+        //Supplier usage and examples
+        Supplier<Integer> supp = () -> 100;
 
-        //Chaining predicates
-        Predicate<Integer>  isEvenAndPos = iseven.and(ispostive);
-        System.out.println("isEvenAndPos? "+ isEvenAndPos.test(100));
+        System.out.println("100 value is being supplie " + supp.get());
 
-        //Function: that transforms the input to output
-        System.out.println("FUNCTION USAGE: ");
-        Function<String, Integer> func1 = (s) -> s.length();
+        //Consumer usage and examples
+        Consumer<String> con = (str) -> System.out.
+                println("value consumed: "+ str);
 
-        System.out.println("length of the string: "+ func1.apply("helloworld"));
+        con.accept("Hunter X Hunter");
 
-        //Consumer: Takes input but it wont provide any output after processing
-        Consumer<String> consumer = (s) -> System.out.println(s);
-        consumer.accept("hello world!");
+        //Function usage and example
+        Function<Integer, Integer> fun = (a) -> (a * 4);
+        System.out.println("value transformed: "+ fun.apply(100));
 
-        //Supplier: supplies the values
-        Supplier<String> supplier = () -> "SUPPLIER";
-        System.out.println(supplier.get());
+        //Comparator usage and examples
+        Comparator<Integer> comp = (a, b) -> {
+            if(a > b){
+                return a;
+            }
+            return b;
+        };
+
+        System.out.println("a is greater or b? " + comp.compare(10, 1));
+
+        Runnable runnable = () -> System.out.println("process running");
+        runnable.run();
     }
 }

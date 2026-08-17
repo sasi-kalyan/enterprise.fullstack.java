@@ -1,3 +1,9 @@
+
+/*
+    Sealed classes are the new feature introduced in java-17,
+    the class which restrict the classes to allow and implement
+    the methods defined inside it.
+ */
 sealed class Shape
     permits Circle, Triangle, Rectangle{
 

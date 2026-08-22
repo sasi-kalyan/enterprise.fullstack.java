@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <!--    <bean id="process" name="process1" class="ioc.spring.Process"/>-->
+<!--    <alias name="process1" alias="process-1"/>-->
+
+    <!-- This is the referencing of the beans -->
+    <!--<bean id="app-1" class="ioc.spring.App">
+        <property name="id" value="1"/>
+        <property name="appname" value="SPOTIFY"/>
+        <property name="desc" value="LISTEN YOUR FAV SONGS"/>
+        <property name="process" ref="process-1"/>
+    </bean>
+
+    <bean id="process-1" class="ioc.spring.Process">
+        <property name="id" value="1"/>
+        <property name="desc" value="PROCESS-1"/>
+    </bean> -->
+
+
+    <!-- Autowiring byName, byType -->
+   <!--<bean id="app-1" class="ioc.spring.App" autowire="byType">
+        <property name="id" value="1"/>
+        <property name="appname" value="SPOTIFY"/>
+        <property name="desc" value="LISTEN YOUR FAV SONGS"/>
+    </bean>
+
+    <bean id="process" class="ioc.spring.Process">
+        <property name="id" value="1"/>
+        <property name="desc" value="PROCESS-1"/>
+    </bean>-->
+
+    <bean id="app-1" class="ioc.spring.App" autowire="constructor">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" value="INSTAGRAM"/>
+        <constructor-arg index="2" value="SHARE YOUR MOMENTS, FUN AND EVERYTHING"/>
+        <!--<property name="id" value="2"/>
+        <property name="appname" value="INSTAGRAM"/>
+        <property name="desc" value="SHARE YOUR MOMENTS, FUN AND EVERYTHING"/>-->
+    </bean>
+
+    <bean id="process" class="ioc.spring.Process">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" value="PROCESS-2"/>
+    </bean>
+
+    <context:annotation-config/>
+    <!--<bean id="app-1" class="ioc.spring.App">
+        <property name="id" value="1"/>
+        <property name="appname" value="SPOTIFY"/>
+        <property name="desc" value="LISTEN YOUR FAV SONGS"/>
+    </bean>
+
+    <bean id="process" class="ioc.spring.Process">
+        <property name="id" value="1"/>
+        <property name="desc" value="PROCESS-1"/>
+    </bean>-->
+
+</beans>

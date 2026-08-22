@@ -17,6 +17,14 @@ import org.springframework.core.io.Resource;
 /*
         Notes:
 
+        Spring Framework: is the lightweight, open-source framework that is provides infrastructure development support
+        to build the enterprise java applications. Using spring we can build robust software systems which promotes
+        the loose-coupling, testability and maintainability.
+
+        IoC (Inversion of Control): is a design principle where the construction of objects, assembling and
+        managing of objects process is transffered from application code to external continer which is
+        spring framework.
+
         Dependency Injection: is a design pattern where the dependencies are injected in the form of beans
         so that we do not need to construct or manage it.
 
@@ -93,8 +101,6 @@ public class Main {
 
         Atom hyd = (Atom) applicationContext.getBean("Hydrogen");
         System.out.println("JavaConfig + AppContext: "+ hyd);
-
-
 
         //Autowiring : Usage - XmlConfiguration
         ClassPathXmlApplicationContext appcontext = new ClassPathXmlApplicationContext("new-app-context.xml");

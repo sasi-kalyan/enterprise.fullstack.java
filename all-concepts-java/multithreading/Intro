@@ -3,12 +3,27 @@ MultiThreading: Is the core concept that java programming , where it allowing mu
 to execute simultaneosly to use the maximum utilization of CPU.
 
 Thread:
--is the small unit or Light weight unit of the process
+-is the small unit or Light weight unit of the process/
+- a thread is the smallest execution unit inside the process, it act a sthe virtual cpu to run the
+- code independently.
 -shares memory with other threads
 
+Example:
+YouTube
+    - Video Playback Thread
+    - Comments Rendering Thread
+    - Recommendation Thread
+    - ADs Thread etc...
+
 Process:
+- A process is an running instance of the program.
 - we can define as the program under execution
 - inter-process communication
+
+OS
+    - Spotify
+    - YouTube
+    - Instagram etc...
 
 There are two different ways to create threads in Java:
 - by extending Thread class
